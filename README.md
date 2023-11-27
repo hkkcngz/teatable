@@ -63,9 +63,10 @@ veya
 - Multilanguage support
 
 
-## Support
-
-- @hakkicengiz7
+## Links
+- NpmJs - https://www.npmjs.com/package/teatable
+- Github - https://github.com/hkkcngz/teatable
+- CodePen - https://codepen.io/hkkcngz/pen/vYbaYXa
 
 
 ### Lisans
