@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./theme1.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div id="tableContainerId"></div>
@@ -15,14 +15,14 @@
             data: [
                 { id: 1, name: "Örnek Veri 1", ekstra: "Ekstra Bilgi 1" },
                 { id: 2, name: "Örnek Veri 2" }
-            ]   , // Başlangıç veri dizisi
-            theme: 'theme1', // Tema seçimi
+            ],
 
             rowsPerPage: 5, // Opsiyonel: Sayfa başına satır sayısı (varsayılan: 5)
             // Opsiyonel: Callback fonksiyonları
             onCreate: (item) => { /* ... */ },
             onEdit: (item, index) => { /* ... */ },
-            onDelete: (item, index) => { /* ... */ }
+            onDelete: (item, index) => { /* ... */ },
+            txtEdit: "Update"
         };
 
         const myTable = new TeaTable('tableContainerId', options);

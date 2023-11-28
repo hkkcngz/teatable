@@ -1,0 +1,231 @@
+$teatablecolor : var(--main-color, #6967ce);
+$teatablepadd : 12px;
+
+#teatable {
+    font-family: Arial, sans-serif;
+    color: #3f4142;
+    padding: $teatablepadd;
+    border-radius: $teatablepadd;
+    button {
+        border: 1px solid $teatablecolor;
+        color: $teatablecolor;
+        background-color: #fff;
+        padding: ( $teatablepadd - 2) $teatablepadd;
+        border-radius: $teatablepadd;
+        cursor: pointer;
+        &:hover {
+            background-color: $teatablecolor;
+            color: #fff;
+        }
+        &.btn-danger:hover {
+            background-color: #e34d4d;
+            border-color: #df6f6f;
+        }
+    }
+
+    input {
+        flex: 1;
+        width: 100%;
+        max-width: calc(100% - ($teatablepadd * 2));
+        padding: $teatablepadd;
+        margin-bottom: 0.5rem;
+        border-radius: $teatablepadd;
+        border: 1px solid $teatablecolor;
+        color: $teatablecolor;
+        background-color: #fff;
+        &::placeholder{
+            color: $teatablecolor;
+        }
+        &:focus {
+            outline: 2px solid $teatablecolor;
+        }
+    }
+    .table-controls, footer.pagination-controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        white-space: nowrap;
+        margin-bottom: 0.5rem;
+        input {
+            margin-bottom: 0;
+        }
+    }
+    .btn-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button:not(:first-child):not(:last-child) {
+            border-left: none;
+            border-right: none;
+            border-radius: 0;
+        }
+        button:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        button:last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+    .btn-action{
+        padding: $teatablepadd 1.5rem;
+    }
+
+    &.dark-mode {
+        $darkcolor : #444;
+        background-color: #333;
+        color: #fff;
+        button {
+            border: 1px solid $darkcolor;
+            color: #fff;
+            background-color: #8d8d8d;
+            &:hover {
+                background-color: $darkcolor;
+                color: #fff;
+            }
+            &.btn-danger:hover {
+                background-color: #e34d4d;
+                border-color: #df6f6f;
+            }
+        }
+        input {
+            border: 1px solid $darkcolor;
+            color: #fff;
+            background-color: #8d8d8d;
+            &::placeholder{
+                color: #fff;
+            }
+            &:focus {
+                outline: 2px solid $darkcolor;
+            }
+            &:hover {
+                background-color: $darkcolor;
+            }
+        }
+        table{
+            background: $darkcolor;
+            color: #fff;
+            //border-radius: $border-radius;
+            border: 1px solid $darkcolor;
+            th {
+                border: none;
+            }
+            td {
+                border: none;
+            }
+            tr:nth-child(odd) {
+                background: #666;
+            }
+            tr:nth-child(even) {
+                background: #555;
+            }
+        }
+    }
+}
+
+
+// Default options for table style
+$table-breakpoint: 480px;
+$table-background-color: #FFF;
+$table-text-color: #024457;
+$table-outer-border: 1px solid $teatablecolor;
+$table-cell-border: 1px solid #D9E4E6;
+
+// Extra options for table style (parse these arguments when including your mixin)
+$table-border-radius: 10px;
+$table-highlight-color: #EAF3F3;
+$table-header-background-color: $teatablecolor;
+$table-header-text-color: #FFF;
+$table-header-border: 1px solid #FFF;
+
+// The Responstable mixin
+
+@mixin responstable(
+  $breakpoint: $table-breakpoint,
+  $background-color: $table-background-color,
+  $text-color: $table-text-color,
+  $outer-border: $table-outer-border,
+  $cell-border: $table-cell-border,
+  $border-radius: none,
+  $highlight-color: none,
+  $header-background-color: $table-background-color,
+  $header-text-color: $table-text-color,
+  $header-border: $table-cell-border) {
+
+    #teatable table {
+    margin: 0.5rem 0;
+    width: 100%;
+    background: $background-color;
+    color: $text-color;
+    border-radius: $border-radius;
+    border: $outer-border;
+    overflow: hidden;
+    //white-space: nowrap;
+  
+    thead th {
+        border-radius: $teatablepadd / 2;
+        cursor: pointer;
+        &:hover {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1rem' height='1rem' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='ai ai-ChevronVertical'%3E%3Cpath d='M8 17l4 4 4-4'/%3E%3Cpath d='M8 7l4-4 4 4'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: calc(100% - 0.2rem) center;
+        }
+    }
+
+    tr {
+      border-top: $outer-border;
+      border-bottom: $outer-border;
+      &:nth-child(odd) {  
+        background-color: $highlight-color;
+      }  
+    }
+  
+    th {
+      display: none; // hide the table headers for mobile
+      //border: $header-border;
+      background-color: $header-background-color;
+      color: $header-text-color;
+    }
+  
+    td {
+        border-radius: $teatablepadd / 2;
+        display: block; // display the table as a block element for mobile   
+
+        &:before {
+            content: attr(data-th)": "; // grab the headers from the data-th and put them before every table cell for mobile
+            font-weight: bold;
+            width: 5rem;
+            display: inline-block;       
+            @media (min-width: $breakpoint) {
+            display: none; // do not display the data-th for desktop
+            }
+        }
+        @media (min-width: $breakpoint) {
+            border: $cell-border;
+        }
+    }
+  
+    th, td {
+      text-align: left;
+      margin: .5em 1em;  
+      @media (min-width: $breakpoint) {
+        display: table-cell; // turn the table into a 'normal' table-cell for desktop
+        padding: 0.5rem;
+        &:first-child {
+          text-align: center;
+        }
+      }
+    }  
+  }
+}
+
+// Include the mixin (with extra options as overrides)
+
+@include responstable(
+  $border-radius: $table-border-radius,
+  $highlight-color: $table-highlight-color,
+  $header-background-color: $table-header-background-color,
+  $header-text-color: $table-header-text-color,
+  $header-border: $table-header-border);

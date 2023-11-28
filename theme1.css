@@ -1,3 +1,7 @@
+::root{
+    --main-color: #ffb3b3;
+}
+
 /* Temel Stiller */
 .theme1 {
     font-family: Arial, sans-serif;
@@ -21,7 +25,7 @@
 }
 
 .theme1 th {
-    background-color: #4CAF50;
+    background-color: rgb(0, 247, 255);
     color: white;
 }
 
@@ -48,7 +52,7 @@
 
 /* Buton Stilleri */
 .theme1 button {
-    background-color: #4CAF50;
+    background-color: var(--main-color);
     color: white;
     padding: 10px 15px;
     margin: 10px 0;
@@ -59,7 +63,7 @@
 }
 
 .theme1 button:hover {
-    background-color: #45a049;
+    background-color: var(--main-color);
 }
 
 /* Sayfalama Stilleri */
@@ -82,4 +86,120 @@
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+
+/* Karanlık Mod Stilleri */
+.dynamic-table.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dynamic-table.dark-mode .dynamic-table {
+    background: #222;
+}
+
+.dynamic-table.dark-mode table {
+    border-color: #444;
+}
+
+.dynamic-table.dark-mode th {
+    background-color: #555;
+}
+
+.dynamic-table.dark-mode tr:hover {
+    background-color: #444;
+}
+
+.dynamic-table.dark-mode button {
+    background-color: #555;
+}
+
+.dynamic-table.dark-mode button:hover {
+    background-color: #666;
+}
+
+
+
+
+.responstable {
+    margin: 1em 0;
+    width: 100%;
+    background: #fff;
+    color: #024457;
+    border-radius: 10px;
+    border: 1px solid var(--main-color);
+    overflow: hidden;
+  }
+  .responstable tr {
+    border-top: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+  }
+  .responstable tr:nth-child(odd) {
+    background-color: #eaf3f3;
+  }
+  .responstable th {
+    display: none;
+    border: 1px solid #fff;
+    background-color: var(--main-color);
+    color: #fff;
+  }
+  .responstable td {
+    display: block;
+  }
+  .responstable td:first-child {
+    padding-top: 0.5em;
+  }
+  .responstable td:last-child {
+    padding-bottom: 0.5em;
+  }
+  .responstable td:before {
+    content: attr(data-th) ": ";
+    font-weight: bold;
+    width: 8em;
+    display: inline-block;
+  }
+  @media (min-width: 480px) {
+    .responstable td:before {
+      display: none;
+    }
+  }
+  @media (min-width: 480px) {
+    .responstable td {
+      border: 1px solid #d9e4e6;
+    }
+  }
+  .responstable th,
+  .responstable td {
+    text-align: left;
+    margin: 0.5em 1em;
+  }
+  @media (min-width: 480px) {
+    .responstable th,
+    .responstable td {
+      display: table-cell;
+      padding: 1em;
+    }
+    .responstable th:first-child,
+    .responstable td:first-child {
+      text-align: center;
+    }
+  }
+
+  footer.pagination-controls {
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.responstable.dynamic-table.dark-mode tr:nth-child(odd) {
+  background-color: #666666;
 }

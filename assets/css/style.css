@@ -1,0 +1,189 @@
+#teatable {
+  font-family: Arial, sans-serif;
+  color: #3f4142;
+  padding: 12px;
+  border-radius: 12px;
+}
+#teatable button {
+  border: 1px solid var(--main-color, #6967ce);
+  color: var(--main-color, #6967ce);
+  background-color: #fff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+#teatable button:hover {
+  background-color: var(--main-color, #6967ce);
+  color: #fff;
+}
+#teatable button.btn-danger:hover {
+  background-color: #e34d4d;
+  border-color: #df6f6f;
+}
+#teatable input {
+  flex: 1;
+  width: 100%;
+  max-width: calc(100% - 24px);
+  padding: 12px;
+  margin-bottom: 0.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--main-color, #6967ce);
+  color: var(--main-color, #6967ce);
+  background-color: #fff;
+}
+#teatable input::-moz-placeholder {
+  color: var(--main-color, #6967ce);
+}
+#teatable input::placeholder {
+  color: var(--main-color, #6967ce);
+}
+#teatable input:focus {
+  outline: 2px solid var(--main-color, #6967ce);
+}
+#teatable .table-controls, #teatable footer.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  white-space: nowrap;
+  margin-bottom: 0.5rem;
+}
+#teatable .table-controls input, #teatable footer.pagination-controls input {
+  margin-bottom: 0;
+}
+#teatable .btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#teatable .btn-group button:not(:first-child):not(:last-child) {
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+#teatable .btn-group button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#teatable .btn-group button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#teatable .btn-action {
+  padding: 12px 1.5rem;
+}
+#teatable.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+#teatable.dark-mode button {
+  border: 1px solid #444;
+  color: #fff;
+  background-color: #8d8d8d;
+}
+#teatable.dark-mode button:hover {
+  background-color: #444;
+  color: #fff;
+}
+#teatable.dark-mode button.btn-danger:hover {
+  background-color: #e34d4d;
+  border-color: #df6f6f;
+}
+#teatable.dark-mode input {
+  border: 1px solid #444;
+  color: #fff;
+  background-color: #8d8d8d;
+}
+#teatable.dark-mode input::-moz-placeholder {
+  color: #fff;
+}
+#teatable.dark-mode input::placeholder {
+  color: #fff;
+}
+#teatable.dark-mode input:focus {
+  outline: 2px solid #444;
+}
+#teatable.dark-mode input:hover {
+  background-color: #444;
+}
+#teatable.dark-mode table {
+  background: #444;
+  color: #fff;
+  border: 1px solid #444;
+}
+#teatable.dark-mode table th {
+  border: none;
+}
+#teatable.dark-mode table td {
+  border: none;
+}
+#teatable.dark-mode table tr:nth-child(odd) {
+  background: #666;
+}
+#teatable.dark-mode table tr:nth-child(even) {
+  background: #555;
+}
+
+#teatable table {
+  margin: 0.5rem 0;
+  width: 100%;
+  background: #FFF;
+  color: #024457;
+  border-radius: 10px;
+  border: 1px solid var(--main-color, #6967ce);
+  overflow: hidden;
+}
+#teatable table thead th {
+  border-radius: 6px;
+  cursor: pointer;
+}
+#teatable table thead th:hover {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1rem' height='1rem' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='ai ai-ChevronVertical'%3E%3Cpath d='M8 17l4 4 4-4'/%3E%3Cpath d='M8 7l4-4 4 4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.2rem) center;
+}
+#teatable table tr {
+  border-top: 1px solid var(--main-color, #6967ce);
+  border-bottom: 1px solid var(--main-color, #6967ce);
+}
+#teatable table tr:nth-child(odd) {
+  background-color: #EAF3F3;
+}
+#teatable table th {
+  display: none;
+  background-color: var(--main-color, #6967ce);
+  color: #FFF;
+}
+#teatable table td {
+  border-radius: 6px;
+  display: block;
+}
+#teatable table td:before {
+  content: attr(data-th) ": ";
+  font-weight: bold;
+  width: 5rem;
+  display: inline-block;
+}
+@media (min-width: 480px) {
+  #teatable table td:before {
+    display: none;
+  }
+}
+@media (min-width: 480px) {
+  #teatable table td {
+    border: 1px solid #D9E4E6;
+  }
+}
+#teatable table th, #teatable table td {
+  text-align: left;
+  margin: 0.5em 1em;
+}
+@media (min-width: 480px) {
+  #teatable table th, #teatable table td {
+    display: table-cell;
+    padding: 0.5rem;
+  }
+  #teatable table th:first-child, #teatable table td:first-child {
+    text-align: center;
+  }
+}/*# sourceMappingURL=style.css.map */

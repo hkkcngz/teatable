@@ -5,7 +5,9 @@
   "main": "index.js",
   "files": [
     "src/",
-    "theme1.css"
+    "assets/css/style.css",
+    "assets/css/style.css.map",
+    "assets/style.scss"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

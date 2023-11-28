@@ -31,7 +31,6 @@ import TeaTable from 'teatable';
 
 const options = {
     data: [...], // Başlangıç veri dizisi
-    theme: "default", // "theme1" tema değiştirebilirsiniz
     rowsPerPage: 5, // Opsiyonel: Sayfa başına satır sayısı (varsayılan: 5)
     // Opsiyonel: Callback fonksiyonları
     onCreate: (item) => { /* ... */ },
@@ -39,7 +38,7 @@ const options = {
     onDelete: (item, index) => { /* ... */ }
 };
 
-const myTable = new DynamicTable('tableContainerId', options);
+const myTable = new TeaTable('tableContainerId', options);
 ```
 
 Bu kod, belirtilen tableContainerId ID'li bir HTML elementi içerisine bir tablo oluşturur.
@@ -59,8 +58,9 @@ veya
 
 ## Eklenecekler (What's Next?)
 
-- Dark Mode or Theme Selector
-- Multilanguage support
+- Dark Mode or Theme Selector ADDED
+- Multilanguage support ADDED
+- Async pagination support
 
 
 ## Links
