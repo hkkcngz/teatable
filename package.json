@@ -7,7 +7,8 @@
     "src/",
     "assets/css/style.css",
     "assets/css/style.css.map",
-    "assets/style.scss"
+    "assets/style.scss",
+    "test.html"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

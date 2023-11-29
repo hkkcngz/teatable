@@ -379,4 +379,4 @@ class TeaTable {
 
 }
 
-//export default TeaTable;
+export default TeaTable;
