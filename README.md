@@ -84,6 +84,10 @@ veya
 - CodePen - https://codepen.io/hkkcngz/pen/vYbaYXa
 
 
+## Donate
+ - [Give a support](https://aeo.ptt.gov.tr/l/c1mTG6v5)
+
+
 ### Lisans
 
 Bu proje MIT lisansı altında lisanslanmıştır.
