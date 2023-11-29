@@ -71,6 +71,10 @@
 }
 #teatable .btn-action {
   padding: 12px 1.5rem;
+  margin-right: 5px;
+}
+#teatable .hidden {
+  display: none !important;
 }
 #teatable.dark-mode {
   background-color: #333;

@@ -189,9 +189,17 @@ class TeaTable {
         submitButton.classList.add('btn-action');
         submitButton.addEventListener('click', () => {
             this.submitForm(editData ? editData.id : null);
-            formDiv.classList.add('hidden');
+            if(editData) formDiv.classList.add('hidden');
         });
         formDiv.appendChild(submitButton);
+
+        let cancelButton = document.createElement('button');
+        cancelButton.textContent = 'Cancel';
+        cancelButton.classList.add('btn-action');
+        cancelButton.addEventListener('click', () => {
+            formDiv.classList.add('hidden');
+        });
+        formDiv.appendChild(cancelButton);
     }
     submitForm(id) {
         const formData = {};
@@ -247,19 +255,27 @@ class TeaTable {
 
     filterTable(searchText) {
         const rows = document.getElementById(this.tableId).getElementsByTagName('tbody')[0].rows;
-    
-        for (let i = 0; i < rows.length; i++) {
-            let row = rows[i];
-            let allCellText = '';
-            for (let j = 0; j < row.cells.length - 1; j++) { // -1, "Action" sütununu hariç tutmak için
-                allCellText += row.cells[j].textContent.toLowerCase() + ' ';
+        let searchTextLower = searchText.toLowerCase();
+        
+        if (searchTextLower) {
+            // Arama metni varsa, sayfalama ayarını geçici olarak değiştir
+            this.tempRowsPerPage = this.rowsPerPage;
+            this.rowsPerPage = 100;  // Tüm satırları tek sayfada göster
+            this.currentPage = 1;  // Sayfayı ilk sayfaya ayarla
+            this.changePage(0)
+
+            for (let i = 0; i < rows.length; i++) {
+                let row = rows[i];
+                let allCellText = '';
+                for (let j = 0; j < row.cells.length - 1; j++) {
+                    allCellText += row.cells[j].textContent.toLowerCase() + ' ';
+                }
+                row.style.display = allCellText.includes(searchTextLower) ? '' : 'none';
             }
-    
-            if (allCellText.indexOf(searchText.toLowerCase()) === -1) {
-                row.style.display = 'none';
-            } else {
-                row.style.display = '';
-            }
+        } else {
+            // Arama metni yoksa, sayfalama ayarlarını eski haline getir
+            this.rowsPerPage = this.tempRowsPerPage;
+            this.loadDataToTable();
         }
     }
 
@@ -372,10 +388,6 @@ class TeaTable {
         downloadLink.click();
         document.body.removeChild(downloadLink);
     }
-
-    // Diğer yardımcı metodlar (filterTable, toggleFullScreen, exportTableToCSV, vb.)
-    // ...
-
 
 }
 

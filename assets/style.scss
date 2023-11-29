@@ -71,6 +71,10 @@ $teatablepadd : 12px;
     }
     .btn-action{
         padding: $teatablepadd 1.5rem;
+        margin-right: 5px;
+    }
+    .hidden {
+        display: none !important;
     }
 
     &.dark-mode {
