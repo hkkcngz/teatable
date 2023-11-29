@@ -12,7 +12,7 @@ class TeaTable {
             onDelete: options.onDelete || null
             // Diğer callback'ler eklenebilir
         };
-        this.language = options.language || 'tr';
+        //this.language = options.language || 'tr';
         this.themeColor = options.themeColor || "#6967ce";
         
         this.txtAdd = options.txtAdd || "Ekle";
