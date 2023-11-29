@@ -16,13 +16,22 @@
                 { id: 1, name: "Örnek Veri 1", ekstra: "Ekstra Bilgi 1" },
                 { id: 2, name: "Örnek Veri 2" }
             ],
+            themeColor : "#6967ce",
 
             rowsPerPage: 5, // Opsiyonel: Sayfa başına satır sayısı (varsayılan: 5)
             // Opsiyonel: Callback fonksiyonları
             onCreate: (item) => { /* ... */ },
             onEdit: (item, index) => { /* ... */ },
             onDelete: (item, index) => { /* ... */ },
-            txtEdit: "Update"
+            // language support
+            txtAdd     : "Add",
+            txtUpdate  : "Update",
+            txtDel     : "Delete",
+            txtEdit    : "Edit",
+            txtAct     : "Actions",
+            txtSearch  : "Search...",
+            txtPage    : "Page",
+            txtConfirm : "Are you sure to delete this data?"
         };
 
         const myTable = new TeaTable('tableContainerId', options);

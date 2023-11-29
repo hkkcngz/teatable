@@ -2,6 +2,7 @@
 
 TeaTable, web uygulamalarınız için hızlı ve kolay bir şekilde dinamik tablolar oluşturmanıza olanak tanıyan bir JavaScript kütüphanesidir. CRUD işlemleri, sıralama, arama, tam ekran görüntüleme, CSV'ye aktarma ve sayfalama özelliklerini destekler. 
 
+Sadece datayı ekleyin o sizin için read, create, update, delete, search işlemlerinizi yapmanızı sağlarken aynı zamanda responsive bir UI'da sunar.
 
 ## Kurulum (Installation)
 
@@ -30,12 +31,26 @@ Kütüphaneyi kullanmak için öncelikle TeaTable sınıfını projenize import 
 import TeaTable from 'teatable';
 
 const options = {
-    data: [...], // Başlangıç veri dizisi
+    data: [ // data here
+        { id: 1, name: "Örnek Veri 1", ekstra: "Ekstra Bilgi 1" },
+        { id: 2, name: "Örnek Veri 2" }
+    ],
+    themeColor : "#6967ce",
+
     rowsPerPage: 5, // Opsiyonel: Sayfa başına satır sayısı (varsayılan: 5)
     // Opsiyonel: Callback fonksiyonları
     onCreate: (item) => { /* ... */ },
     onEdit: (item, index) => { /* ... */ },
-    onDelete: (item, index) => { /* ... */ }
+    onDelete: (item, index) => { /* ... */ },
+    // language support
+    txtAdd     : "Add",
+    txtUpdate  : "Update",
+    txtDel     : "Delete",
+    txtEdit    : "Edit",
+    txtAct     : "Actions",
+    txtSearch  : "Search...",
+    txtPage    : "Page",
+    txtConfirm : "Are you sure to delete this data?"
 };
 
 const myTable = new TeaTable('tableContainerId', options);
