@@ -79,6 +79,7 @@ or
 
 ## Links
 - NpmJs - https://www.npmjs.com/package/teatable
+- Devto - https://dev.to/hkkcngz/teatable-create-dynamic-crud-table-paginated-sorted-featured-3f0l
 - Github - https://github.com/hkkcngz/teatable
 - CodePen - [https://codepen.io/hkkcngz/pen/ZEwMJPo](https://codepen.io/hkkcngz/pen/ZEwMJPo)
 
