@@ -81,7 +81,7 @@ veya
 ## Links
 - NpmJs - https://www.npmjs.com/package/teatable
 - Github - https://github.com/hkkcngz/teatable
-- CodePen - [https://codepen.io/hkkcngz/pen/vYbaYXa](https://codepen.io/hkkcngz/pen/ZEwMJPo)
+- CodePen - [https://codepen.io/hkkcngz/pen/ZEwMJPo](https://codepen.io/hkkcngz/pen/ZEwMJPo)
 
 
 ## Donate
