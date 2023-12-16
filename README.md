@@ -1,44 +1,44 @@
 # TeaTable
 
-TeaTable, web uygulamalarınız için hızlı ve kolay bir şekilde dinamik tablolar oluşturmanıza olanak tanıyan bir JavaScript kütüphanesidir. CRUD işlemleri, sıralama, arama, tam ekran görüntüleme, CSV'ye aktarma ve sayfalama özelliklerini destekler. 
+TeaTable is a JavaScript library that allows you to quickly and easily create dynamic tables for your web applications. It supports CRUD operations, sorting, searching, full-screen display, CSV export, and pagination.
 
-Sadece datayı ekleyin o sizin için read, create, update, delete, search işlemlerinizi yapmanızı sağlarken aynı zamanda responsive bir UI'da sunar.
+Just add your data and it will facilitate read, create, update, delete, and search operations while also providing a responsive UI.
 
-## Kurulum (Installation)
+## Installation
 
-Kütüphaneyi projenize dahil etmek için aşağıdaki komutu kullanabilirsiniz:
+To include the library in your project, you can use the following command:
 
 ```bash
 npm i teatable
 ```
 
-_Eğer import etmeden kullanmak istiyorsanız koddan 'export default' satırını yorum içine alarak projenize dahil edebilirsiniz._
+_If you want to use it without importing, you can comment out the 'export default' line in the code and include it in your project._
 
-## Özellikler / Features
+## Features
 
-- CRUD İşlemleri: Veri ekleme, okuma, güncelleme ve silme işlevleri.
-- Sıralama: Her sütun başlığına tıklandığında ilgili sütuna göre sıralama.
-- Arama: Tablo verileri üzerinde anlık arama yapma.
-- Tam Ekran: Tabloyu tam ekran modunda görüntüleme.
-- CSV'ye Aktarma: Tablo verilerini CSV formatında dışa aktarma.
-- Sayfalama: Büyük veri setleri için sayfa sayfa gezinme.
+- CRUD Operations: Functions for adding, reading, updating, and deleting data.
+- Sorting: Sorting by the relevant column when clicking on each column header.
+- Searching: Instant searching within table data.
+- Full Screen: Displaying the table in full-screen mode.
+- CSV Export: Exporting table data in CSV format.
+- Pagination: Navigating through large data sets page by page.
 
-## Kullanım (Usage)
+## Usage
 
-Kütüphaneyi kullanmak için öncelikle TeaTable sınıfını projenize import edin ve bir örnek (instance) oluşturun.
+To use the library, first import the TeaTable class into your project and create an instance.
 
 ```
 import TeaTable from 'teatable';
 
 const options = {
     data: [ // data here
-        { id: 1, name: "Örnek Veri 1", ekstra: "Ekstra Bilgi 1" },
-        { id: 2, name: "Örnek Veri 2" }
+        { id: 1, name: Sample Data 1", extra: "Extra Info 1" },
+        { id: 2, name: "Sample Data 2" }
     ],
     themeColor : "#6967ce",
 
-    rowsPerPage: 5, // Opsiyonel: Sayfa başına satır sayısı (varsayılan: 5)
-    // Opsiyonel: Callback fonksiyonları
+    rowsPerPage: 5, // Optional: Number of rows per page (default: 5)
+    // Optional: Callback functions
     onCreate: (item) => { /* ... */ },
     onEdit: (item, index) => { /* ... */ },
     onDelete: (item, index) => { /* ... */ },
@@ -56,22 +56,21 @@ const options = {
 const myTable = new TeaTable('tableContainerId', options);
 ```
 
-Bu kod, belirtilen tableContainerId ID'li bir HTML elementi içerisine bir tablo oluşturur.
+This code creates a table within the HTML element with the specified tableContainerId ID.
 
-## Stil Ekleme (Styling)
+## Styling
 
-Kütüphaneyi görsel açıdan iyileştirmek için, aşağıdaki CSS dosyasını projenize dahil edin:
+To visually enhance the library, include the following CSS file in your project:
 
 ```html
-<link rel="stylesheet" href="node_modules/your-library-name/theme1.css">
+<link rel="stylesheet" href="node_modules/teatable/assets/style.css">
 ```
+or
 
-veya
-
-```import 'your-library-name/theme1.css';```
+```import 'teatable/assets/style.css';```
 
 
-## Eklenecekler (What's Next?)
+## What's Next?
 
 - Dark Mode or Theme Selector ADDED
 - Multilanguage support ADDED
@@ -81,13 +80,13 @@ veya
 ## Links
 - NpmJs - https://www.npmjs.com/package/teatable
 - Github - https://github.com/hkkcngz/teatable
-- CodePen - https://codepen.io/hkkcngz/pen/vYbaYXa
+- CodePen - [https://codepen.io/hkkcngz/pen/ZEwMJPo](https://codepen.io/hkkcngz/pen/ZEwMJPo)
 
 
 ## Donate
- - [Give a support](https://aeo.ptt.gov.tr/l/c1mTG6v5)
+ - [Give a support](https://www.buymeacoffee.com/F6HYT2d)
 
 
-### Lisans
+### Licence
 
-Bu proje MIT lisansı altında lisanslanmıştır.
+This project is licensed under the MIT License by Hakki Cengiz.
