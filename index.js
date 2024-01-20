@@ -211,13 +211,19 @@ class TeaTable {
     
         if (id === null) {
             // Yeni veri ekleme
-            formData.id = this.data.length > 0 ? this.data[this.data.length - 1].id + 1 : 1;
+            formData.id = this.data.length > 0 ? (this.data[this.data.length - 1].id * 1) + 1 : 1;
             this.data.push(formData);
+            if (typeof this.callbacks.onCreate === 'function') {
+                this.callbacks.onCreate(formData);
+            }
         } else {
             // Mevcut veriyi güncelleme
             const index = this.data.findIndex(item => item.id === id);
             if (index !== -1) {
                 this.data[index] = { ...this.data[index], ...formData };
+            }
+            if (typeof this.callbacks.onEdit === 'function') {
+                this.callbacks.onEdit(id, this.data[index]);
             }
         }
         
@@ -235,10 +241,6 @@ class TeaTable {
         const editItem = this.data.find(item => item.id === id);
         if (editItem) {
             this.createForm(editItem);
-
-            if (typeof this.callbacks.onEdit === 'function') {
-                this.callbacks.onEdit(editItem);
-            }
         }
     }
     

@@ -22,9 +22,9 @@
 
             rowsPerPage: 5, // Opsiyonel: Sayfa başına satır sayısı (varsayılan: 5)
             // Opsiyonel: Callback fonksiyonları
-            onCreate: (item) => { /* ... */ },
-            onEdit: (item, index) => { /* ... */ },
-            onDelete: (item, index) => { /* ... */ },
+            onCreate: (newData) => { console.log(newData) },
+            onEdit: (id, newData) => { console.log(id, newData) },
+            onDelete: (id) => { console.log(id) },
             // language support
             txtAdd     : "Add",
             txtUpdate  : "Update",
