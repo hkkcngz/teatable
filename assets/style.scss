@@ -169,7 +169,7 @@ $table-header-border: 1px solid #FFF;
     //white-space: nowrap;
   
     thead th {
-        border-radius: $teatablepadd / 2;
+        border-radius: calc($teatablepadd / 2);
         cursor: pointer;
         &:hover {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1rem' height='1rem' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='ai ai-ChevronVertical'%3E%3Cpath d='M8 17l4 4 4-4'/%3E%3Cpath d='M8 7l4-4 4 4'/%3E%3C/svg%3E");
@@ -194,7 +194,7 @@ $table-header-border: 1px solid #FFF;
     }
   
     td {
-        border-radius: $teatablepadd / 2;
+        border-radius: calc($teatablepadd / 2);
         display: block; // display the table as a block element for mobile   
 
         &:before {

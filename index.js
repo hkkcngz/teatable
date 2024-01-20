@@ -132,7 +132,7 @@ class TeaTable {
             let row = tbody.insertRow();
             keys.forEach(key => {
                 let cell = row.insertCell();
-                cell.textContent = item[key];
+                cell.textContent = typeof item[key] == "object" ? JSON.stringify(item[key]) : item[key];
             });
     
             // Eylem butonlarını ekle
