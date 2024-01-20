@@ -39,9 +39,9 @@ const options = {
 
     rowsPerPage: 5, // Optional: Number of rows per page (default: 5)
     // Optional: Callback functions
-    onCreate: (item) => { /* ... */ },
-    onEdit: (item, index) => { /* ... */ },
-    onDelete: (item, index) => { /* ... */ },
+    onCreate: (newData) => { console.log(newData) },
+    onEdit: (id, newData) => { console.log(id, newData) },
+    onDelete: (id) => { console.log(id) },
     // language support
     txtAdd     : "Add",
     txtUpdate  : "Update",
